@@ -1,0 +1,18 @@
+<div class="row" data-room-id="<%= @room.id %>">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @room.name %>
+	</p>
+
+	<p>
+	  <strong>Subject:</strong>
+	  <%= @room.subject %>
+	</p>
+
+	<%= render 'messages' %>
+	<%= render 'new_message' %>
+</div>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back to Launch Site List', rooms_path %> | 
+<%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
