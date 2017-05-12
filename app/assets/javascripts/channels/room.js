@@ -11,7 +11,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    console.log(data);
+    $('#room-messages').append(data.message);
     $(".alert.alert-info").show();
   },
 

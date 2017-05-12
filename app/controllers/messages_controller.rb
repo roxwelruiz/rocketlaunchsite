@@ -33,9 +33,9 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         #ActionCable.server.broadcast 'room_channel', message: @message
-        RoomChannel.broadcast_to @room.id, message: @message
+        #RoomChannel.broadcast_to @room.id, message: @message
+        RoomChannel.broadcast_to @room.id, message: MessagesController.render(partial: 'messages/message', locals: {message: @message, current_user: current_user})
 
-        #RoomChannel.broadcast_to @room.id, message: MessagesController.render(partial: 'messages/message', locals: {message: @message, current_user: current_user})
         format.html { redirect_to @room, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @room }
         format.js
