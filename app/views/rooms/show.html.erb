@@ -9,7 +9,20 @@
 	  <%= @room.subject %>
 	</p>
 
+	<p>
+	  <strong>current_user:</strong>
+	  <%= current_user.id %>
+	</p>	
+
 	<div class="alert alert-info" style="display:none" role="alert">A new message was posted!</div>
+
+<p>
+<strong>Current users</strong><br>
+<% @users.each do |user| %>
+	->>> <%= user.first_name %><br>
+<% end %>
+</p>
+
 
 	<%= render 'messages' %>
 	<%= render 'new_message' %>
@@ -17,4 +30,4 @@
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back to Launch Site List', rooms_path %> | 
-<%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+<%= link_to 'Return to Base', root_path %>

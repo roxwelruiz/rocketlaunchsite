@@ -1,3 +1,91 @@
 // Place all the styles related to the main_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*************/
+/* variables */
+/*************/
+$header-height: 50px;
+$heavy-grey: #d5d5d5;
+
+/***********/
+/* general */
+/***********/
+
+// adjusting for the navigation bar
+body { padding-top: $header-height; }
+
+// tweaking the bottom border for the page headers
+.page-header { border-bottom: 1px solid $heavy-grey; }
+
+// tweak the hr tags
+.heavy-hr { border-top-color: $heavy-grey; }
+
+// generic class for centering content
+.center-content { text-align: center; }
+
+// generic class for styling the anchor tags
+.large-anchors {
+  font-size: 21px;
+  font-weight: 200;
+}
+
+// adds margin to form buttons
+.form-button {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+// used to style different texts in form labels
+.double-content {
+	margin-bottom: 5px;
+
+	.inline-label { display: inline; }
+
+	.custom-label {
+		margin-left: 5px;
+		
+		font-weight: normal;
+	}
+}
+
+// change the colour of focused elements to orange-ish
+.form-control:focus {
+    border-color: #ec971f;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(236,151,31,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(236,151,31,.6);
+}
+
+/******************/
+/* navigation bar */
+/******************/
+
+// tweaking the navbar's look and feel
+.navbar-default { 
+	background-color: #ec971f;
+	border-color: #d58512;
+
+	.navbar-brand { color: #fff; }
+
+	.navbar-brand:hover { color: #333; }
+
+	.navbar-nav {
+		> li {
+			> a { color: #fff; }
+		}
+	}
+}
+
+/**************/
+/* index page */
+/**************/
+
+// tweaking the jumbotron at the index page
+.jumbotron {
+	text-align: center;
+	background-color: #fff;
+
+	h1 { text-align: center; }
+
+	p { margin-bottom: 50px; }
+}

@@ -1,3 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.big-link {
+  font-size: 21px;
+  font-weight: 200;
+}
+
+/* used for login, sign-up, password reset, and other small forms */
+.mini-container {
+	margin: 0 auto;
+	max-width: 330px;
+}

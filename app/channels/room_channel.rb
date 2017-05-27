@@ -1,4 +1,5 @@
-# Channel server-side 
+# Channel server-side
+
 class RoomChannel < ApplicationCable::Channel
 
 	# called the moment a user subscribes to the channel
@@ -16,5 +17,6 @@ class RoomChannel < ApplicationCable::Channel
   	stop_all_streams
 
   	stream_for data["room_id"]
+    #User.update(current_user.id, room_id: data["room_id"])
   end
 end

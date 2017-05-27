@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rocketlaunchsite</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Rocketlaunchsite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-  <body>
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+    </script>
+  <![endif]-->  
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'TheLaunchSite', root_path, class: "navbar-brand" %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="top-navbar-collapse">
+
+        <% if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Access Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        <% end %> 
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <% if notice != nil %>
+    <div class="alert alert-info modified-alert" id="notice" role="alert"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if alert != nil %>
+    <div class="alert alert-danger modified-alert" id="alert" role="alert"><%= flash[:alert] %></div>
+  <% end %>  
+
+  <%= yield %>
+</body>
 </html>

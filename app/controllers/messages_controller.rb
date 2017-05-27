@@ -34,7 +34,6 @@ class MessagesController < ApplicationController
       if @message.save
         #ActionCable.server.broadcast 'room_channel', message: @message
         #RoomChannel.broadcast_to @room.id, message: @message
-        
 
         format.html { redirect_to @room, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @room }

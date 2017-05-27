@@ -1,14 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="mini-container">
+  <div class="page-header">
+    <h1>My Profile</h1>
+  </div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+	<div class="panel panel-warning">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">First name</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= @user.first_name %>
+	  </div>
+	</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+	<div class="panel panel-warning">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Last name</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= @user.last_name %>
+	  </div>
+	</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<hr>
+
+  <div class="center-content large-anchors">
+		<%= link_to "Edit Profile", edit_user_path(@user) %><br>
+		<%= link_to 'Back to Previous', :back, class: 'big-link' %><br>
+		<%= link_to 'Return to Base', root_path, class: 'big-link' %>
+  </div>
+
+  <hr class="heavy-hr">
+</div>
