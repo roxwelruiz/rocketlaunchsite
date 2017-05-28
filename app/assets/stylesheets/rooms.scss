@@ -1,3 +1,39 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// tweak the shading in the odd lines of the table
+.table-striped {
+	> tbody {
+		> tr:nth-of-type(odd) {
+	    background-color: #fcf8e3;
+  	}
+	}
+}
+
+// tweak to the border lines
+.table {
+	> thead {
+		> tr {
+			> th {
+    		border-bottom: 2px solid #faebcc;
+			}
+		}
+	}
+
+	> tbody {
+		> tr {
+			>	td {
+	    	border-top: 1px solid #faebcc;
+	  	}
+		}
+	}
+}
+
+.side-bar {
+	background-color: #465c85;
+}
+
+#message-textarea {
+	resize: none;
+}

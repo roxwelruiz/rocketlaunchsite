@@ -1,5 +1,16 @@
-<h1>New Room</h1>
+<div class="mini-container">
+  <div class="page-header">
+    <h1>New Launch Site</h1>
+  </div>
 
-<%= render 'form', room: @room %>
+  <%= render 'form', room: @room %>
 
-<%= link_to 'Back to Launch Site List', rooms_path %> | <%= link_to "Return to Base", root_path %>
+	<hr>
+
+  <div class="center-content large-anchors">
+		<%= link_to 'Back to Launch Sites', rooms_path, class: 'large-anchors' %><br>
+		<%= link_to "Return to Base", root_path, class: 'large-anchors' %>		
+  </div>
+
+  <hr class="heavy-hr">
+</div>

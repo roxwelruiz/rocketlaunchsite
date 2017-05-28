@@ -1,17 +1,8 @@
 <%= form_for([@room, @room.messages.build], remote: true) do |f| %>
-	<div>
-	  <h3>New Message</h3>
+	<div class="input-group">
+	  <%= f.text_area :text, class: "form-control", id: 'message-textarea', placeholder: "Write a message...", rows: "1" %>
+	  <span class="input-group-btn">
+	  	<%= f.submit "Launch!", class: "btn btn-warning" %>
+	  </span>
 	</div>
-
-	<div class="field">
-	  <%= f.label :text %>
-	  <%= f.text_area :text, id: 'message-textarea' %>
-	</div>
-
-
-	<br>
-
-  <div class="center-content">
-    <%= f.submit "Launch!", class: "btn btn-primary" %>
-  </div>
 <% end %>

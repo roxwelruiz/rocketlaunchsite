@@ -1,30 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="page-header">
+    <h1>Launch Sites</h1>
+  </div>
 
-<h1>Rooms</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Subject</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rooms.each do |room| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= room.name %></td>
-        <td><%= room.subject %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Subject</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <td><%= room.name %></td>
+          <td><%= room.subject %></td>
+          <td><%= link_to 'Go', room %></td>
+          <td><%= link_to 'Edit', edit_room_path(room) %></td>
+          <td><%= link_to 'Delete', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Create a Launch Site', new_room_path %>
-<%= link_to 'Return to Base', root_path %>
+  <hr>
+
+  <div class="center-content large-anchors">
+    <%= link_to 'New Launch Site', new_room_path, class: 'large-anchors' %> | 
+    <%= link_to 'Return to Base', root_path, class: 'large-anchors' %>
+  </div>
+
+  <hr class="heavy-hr">
+</div>  

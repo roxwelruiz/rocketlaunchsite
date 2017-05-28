@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :subject %>
-    <%= f.text_field :subject %>
+    <%= f.text_field :subject, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-button center-content">
+    <%= f.submit class: "btn btn-lg btn-block btn-warning" %>
   </div>
 <% end %>

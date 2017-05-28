@@ -1,33 +1,35 @@
-<div class="row" data-room-id="<%= @room.id %>">
-	<p>
-	  <strong>Name:</strong>
-	  <%= @room.name %>
-	</p>
+<div class="container-fluid" data-room-id="<%= @room.id %>">
 
-	<p>
-	  <strong>Subject:</strong>
-	  <%= @room.subject %>
-	</p>
+	<div class="row">
+	  <div class="col-md-3 side-bar">
+			<p>
+			  <strong><%= @room.name %></strong>
+			  <%= @room.subject %>
+			</p>
 
-	<p>
-	  <strong>current_user:</strong>
-	  <%= current_user.id %>
-	</p>	
+			<p>
+			  <strong><%= current_user.first_name %></strong>
+			</p>	
 
-	<div class="alert alert-info" style="display:none" role="alert">A new message was posted!</div>
+			<!--
+			<p>
+				<strong>Current users</strong><br>
+			-->
+				<%# @users.each do |user| %>
+					<%#= user.first_name %>
 
-<p>
-<strong>Current users</strong><br>
-<% @users.each do |user| %>
-	->>> <%= user.first_name %><br>
-<% end %>
-</p>
+				<%# end %>
+			<!--
+			</p>
+			-->
 
-
-	<%= render 'messages' %>
-	<%= render 'new_message' %>
+			<%= link_to 'Back to Launch Site List', rooms_path %><br>
+			<%= link_to 'Return to Base', root_path %>
+	  </div>
+	  
+	  <div class="col-md-9">
+			<%= render 'messages' %>
+			<%= render 'new_message' %>
+	  </div>
+	</div>
 </div>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back to Launch Site List', rooms_path %> | 
-<%= link_to 'Return to Base', root_path %>
