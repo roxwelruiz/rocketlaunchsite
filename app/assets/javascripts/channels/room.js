@@ -12,7 +12,9 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
     $('#room-messages').append(data.message);
-    $(".alert.alert-info").show();
+    
+    //$(".alert.alert-info").show();
+    // work on this later...
   },
 
   // calls the listen function in the room_channel.rb file

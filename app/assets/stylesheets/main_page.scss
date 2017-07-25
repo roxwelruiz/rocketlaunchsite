@@ -60,18 +60,76 @@ body { padding-top: $header-height; }
 /* navigation bar */
 /******************/
 
+#custom-chevron {
+	top: 0;
+	padding: 15px 6px;
+}
+
 // tweaking the navbar's look and feel
 .navbar-default { 
 	background-color: #ec971f;
 	border-color: #d58512;
 
 	.navbar-brand { color: #fff; }
-
 	.navbar-brand:hover { color: #333; }
+	.custom-brand:hover { color: #fff; }
 
 	.navbar-nav {
 		> li {
 			> a { color: #fff; }
+		}
+
+		>.open {
+			>a, >a:hover, >a:focus {
+		    color: #fff;
+		    background-color: #465c85;
+			}
+		}
+	}
+
+	.navbar-toggle { 
+		border-color: #fff; 
+
+		.icon-bar {
+    	background-color: #fff;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-default {
+		.navbar-nav {
+			.open {
+				.dropdown-menu {
+					>li {
+						>a {
+	    				color: #333;
+	    			}
+	    		}
+	    	}
+	    }
+	  }
+	}
+}
+
+#top-navbar-collapse {
+	//color: #333;
+	//background-color: #fff;
+}
+
+.dropdown-menu {
+	min-width: 140px;
+	text-align: right;
+
+	>li {
+		//>a {
+		//	padding: 0;
+		//	padding-right: 15px;
+		//}
+
+		>a:hover {
+	    color: #fff;
+	    background-color: #465c85;
 		}
 	}
 }

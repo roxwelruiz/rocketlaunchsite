@@ -1,12 +1,13 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  #before_action :reset_room_id, only: [:index, :show, :destroy]
+  before_action :reset_room_id, only: [:index, :destroy]
   before_filter :authenticate_user!
 
   # GET /rooms
   # GET /rooms.json
   def index
     @rooms = Room.all
+    #User.update(current_user.id, room_id: nil)
   end
 
   # GET /rooms/1

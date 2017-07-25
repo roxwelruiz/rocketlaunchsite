@@ -1,35 +1,19 @@
 <div class="container-fluid" data-room-id="<%= @room.id %>">
-
 	<div class="row">
-	  <div class="col-md-3 side-bar">
-			<p>
-			  <strong><%= @room.name %></strong>
-			  <%= @room.subject %>
-			</p>
-
-			<p>
-			  <strong><%= current_user.first_name %></strong>
-			</p>	
-
-			<!--
-			<p>
-				<strong>Current users</strong><br>
-			-->
-				<%# @users.each do |user| %>
-					<%#= user.first_name %>
-
-				<%# end %>
-			<!--
-			</p>
-			-->
-
-			<%= link_to 'Back to Launch Site List', rooms_path %><br>
-			<%= link_to 'Return to Base', root_path %>
-	  </div>
-	  
-	  <div class="col-md-9">
+		<div class="col-xs-2"></div>
+	  <div class="col-xs-8">
 			<%= render 'messages' %>
-			<%= render 'new_message' %>
 	  </div>
+	  <div class="col-xs-2"></div>
 	</div>
 </div>
+
+<nav class="sticky_nav navbar-fixed-bottom">
+	<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<%= render 'new_message' %>
+		</div>
+		<div class="col-xs-2"></div>
+	</div>
+</nav>

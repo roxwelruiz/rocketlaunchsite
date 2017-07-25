@@ -1,3 +1,32 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel {
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+	.panel-heading {
+		padding: 5px 7.5px;
+
+		.panel-title {
+			font-size: 1em;
+			font-weight: 700;
+
+			.time-stamp {
+				font-size: .85em;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.panel-body {
+		padding: 5px 7.5px;
+
+		font-weight: 300;
+		font-size: 1.05em;
+	}	
+}
