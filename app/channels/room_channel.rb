@@ -17,6 +17,5 @@ class RoomChannel < ApplicationCable::Channel
   	stop_all_streams
 
   	stream_for data["room_id"]
-    #User.update(current_user.id, room_id: data["room_id"])
   end
 end

@@ -17,3 +17,12 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
   }
 
 });
+
+$(document).on({
+    mouseenter: function () {
+      $(this).attr("src", "/assets/rocket-mini_25_b.png");
+    },
+    mouseleave: function () {
+      $(this).attr("src", "/assets/rocket-mini_25_w.png");
+    }
+}, "#minirocketimage");

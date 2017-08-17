@@ -90,9 +90,7 @@ body { padding-top: $header-height; }
 	.navbar-toggle { 
 		border-color: #fff; 
 
-		.icon-bar {
-    	background-color: #fff;
-		}
+		.icon-bar { background-color: #fff; }
 	}
 }
 
@@ -147,3 +145,46 @@ body { padding-top: $header-height; }
 
 	p { margin-bottom: 50px; }
 }
+
+#rocket {
+	max-height: 395px;
+  opacity: 0.5;
+}
+
+#minirocket { padding: 4px 9px; }
+
+.container-fluid {
+	>.navbar-header { margin-right: 0px; }
+}
+
+.navbar-glyphicon-container {
+	margin-left: 15px;
+
+	.navbar-glyphicon {
+		margin-top: 2px;
+
+		font-size: 42px;
+		color: #fff;
+	}
+
+	.navbar-glyphicon:hover {
+		color: #333;
+	}
+}
+
+#launch-pad-name {
+	position: fixed;
+	margin-top: 0px;
+	border-radius: 0;
+	text-align: center;
+	border-width: 1px 0px 2px 0px;
+	width: 100%;
+	z-index: 1030;
+}
+
+.lowermenu {
+	max-width: 738px;
+
+	>p { margin-bottom: 0; }
+}
+

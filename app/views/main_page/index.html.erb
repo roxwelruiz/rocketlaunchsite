@@ -1,14 +1,14 @@
 <div class="container-fluid jumbotron">
-  <h1>The Rocket Launch Site</h1>  
-  <p>
+	<img id="rocket" class="img-responsive center-block" src="assets/rocket_o.png">
+  <h1>The Rocket Launch Site</h1>
+  <div class="row lowermenu center-block">
 		<% if not user_signed_in? %>
-			<%= link_to "Sign Up", new_user_registration_path %> | 
-			<%= link_to "Log In", new_user_session_path %>
+			<p class="col-sm-6"><%= link_to "Sign Up", new_user_registration_path %></p> 
+			<p class="col-sm-6"><%= link_to "Log In", new_user_session_path %></p>
 		<% else %>
-			<%= link_to "Search a Launch Site", rooms_path %> | 
-			<%= link_to "Create a Launch Site", new_room_path %>
+			<p class="col-sm-6"><%= link_to "Search a Launch Pad", rooms_path %></p>
+			<p class="col-sm-6"><%= link_to "Create a Launch Pad", new_room_path %></p>
 		<% end %>
-  </p>
-  
+  </div>
   <hr>
 </div>
