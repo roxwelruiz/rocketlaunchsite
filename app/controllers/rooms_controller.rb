@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   def show
     @messages = @room.messages
     #User.update(current_user.id, room_id: @room.id)
-    @users = @room.users
+    #@users = @room.users
   end
 
   # GET /rooms/new
@@ -31,6 +31,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
+    @room.user = current_user
 
     respond_to do |format|
       if @room.save
@@ -79,6 +80,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :subject)
+      params.require(:room).permit(:name, :subject, :user_id)
     end
 end

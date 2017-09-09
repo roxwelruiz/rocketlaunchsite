@@ -5,9 +5,7 @@
 // tweak the shading in the odd lines of the table
 .table-striped {
 	> tbody {
-		> tr:nth-of-type(odd) {
-	    background-color: #fcf8e3;
-  	}
+		> tr:nth-of-type(odd) { background-color: #fcf8e3; }
 	}
 }
 
@@ -15,28 +13,37 @@
 .table {
 	> thead {
 		> tr {
-			> th {
-    		border-bottom: 2px solid #faebcc;
-			}
+			> th { border-bottom: 2px solid #faebcc; }
 		}
 	}
 
 	> tbody {
 		> tr {
-			>	td {
-	    	border-top: 1px solid #faebcc;
-	  	}
+			>	td { border-top: 1px solid #faebcc;	}
+
+			.custom-td { 
+				line-height: 40px;
+				font-size: 1.25em;
+				font-weight: 300;
+			}
 		}
 	}
 }
 
-.side-bar {
-	background-color: #465c85;
-}
+.list-glyphicon  { max-height: 2em; }
 
-#message-textarea {
-	resize: none;
+.list-button {
+	font-size: 2em;
+	color: #465c85;
 }
+.btn-go:hover     { color: #018F00; }
+.btn-edit:hover   { color: #FFCD5B; }
+.btn-delete:hover { color: #B01100; }
+
+
+.side-bar {	background-color: #465c85; }
+
+#message-textarea { resize: none; }
 
 #room-messages {
 	padding-top: 35px;

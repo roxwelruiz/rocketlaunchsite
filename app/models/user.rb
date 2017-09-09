@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	belongs_to :room
+	#belongs_to :room
 	has_many :messages, dependent: :destroy
 end
