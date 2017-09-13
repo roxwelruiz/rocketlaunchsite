@@ -1,21 +1,18 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  #before_action :reset_room_id, only: [:index, :destroy]
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /rooms
   # GET /rooms.json
   def index
     @rooms = Room.all
-    #User.update(current_user.id, room_id: nil)
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
     @messages = @room.messages
-    #User.update(current_user.id, room_id: @room.id)
-    #@users = @room.users
   end
 
   # GET /rooms/new
@@ -72,10 +69,6 @@ class RoomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_room
       @room = Room.find(params[:id])
-    end
-
-    def reset_room_id
-      User.update(current_user.id, room_id: nil)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -24,16 +24,16 @@
         <%= link_to image_tag("rocket-mini_25_w.png", id: "minirocketimage"), root_path, class: "navbar-brand", id: "minirocket" %>
       </div>
 
+      <div class="navbar-header pull-right">
       <% if user_signed_in? %>
-        <div class="navbar-header pull-right">
-          <%# if controller.controller_name == "rooms" && controller.action_name == "show" %>
-            <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>'), rooms_path, class: "navbar-glyphicon-container" %>
-          <%# end %>             
-          <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>'), user_path(current_user), class: "navbar-glyphicon-container" %>
-          <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-out" aria-hidden="true"></span>'), destroy_user_session_path, :method => :delete, class: "navbar-glyphicon-container" %>
-        </div>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>'), rooms_path, class: "navbar-glyphicon-container" %>           
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>'), user_path(current_user), class: "navbar-glyphicon-container" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-out" aria-hidden="true"></span>'), destroy_user_session_path, :method => :delete, class: "navbar-glyphicon-container" %>
+      <% else %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>'), new_user_registration_path, class: "navbar-glyphicon-container" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span>'), new_user_session_path, class: "navbar-glyphicon-container" %>        
       <% end %>
-
+      </div>
     </div><!-- /.container-fluid -->
   </nav>
 

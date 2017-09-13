@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # nesting the messages resource within the rooms resource
   resources :rooms do
-    resources :messages
+    resources :messages, only: :create 
   end
 
   root 'main_page#index'
