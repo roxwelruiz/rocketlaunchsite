@@ -21,17 +21,17 @@
     <div class="container-fluid">
 
       <div class="navbar-header pull-left">
-        <%= link_to image_tag("rocket-mini_25_w.png", id: "minirocketimage"), root_path, class: "navbar-brand", id: "minirocket" %>
+        <%= link_to image_tag("rocket-mini_25_w.png", id: "minirocketimage"), root_path, class: "navbar-brand", id: "minirocket", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Home" %>
       </div>
 
       <div class="navbar-header pull-right">
       <% if user_signed_in? %>
-        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>'), rooms_path, class: "navbar-glyphicon-container" %>           
-        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>'), user_path(current_user), class: "navbar-glyphicon-container" %>
-        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-out" aria-hidden="true"></span>'), destroy_user_session_path, :method => :delete, class: "navbar-glyphicon-container" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-list" aria-hidden="true"></span>'), rooms_path, class: "navbar-glyphicon-container", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Search a Launch Pad" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>'), user_path(current_user), class: "navbar-glyphicon-container", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "My Profile" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-out" aria-hidden="true"></span>'), destroy_user_session_path, :method => :delete, class: "navbar-glyphicon-container", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Log Out" %>
       <% else %>
-        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>'), new_user_registration_path, class: "navbar-glyphicon-container" %>
-        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span>'), new_user_session_path, class: "navbar-glyphicon-container" %>        
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span>'), new_user_registration_path, class: "navbar-glyphicon-container", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Sign Up" %>
+        <%= link_to raw('<span class="navbar-glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span>'), new_user_session_path, class: "navbar-glyphicon-container", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Log In" %>        
       <% end %>
       </div>
     </div><!-- /.container-fluid -->

@@ -16,6 +16,9 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
     );
   }
 
+  // tooltip functions for links and buttons
+  $('[data-toggle="tooltip"]').tooltip();
+
 });
 
 $(document).on({

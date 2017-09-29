@@ -21,6 +21,20 @@
 	  </div>
 	</div>
 
+	<div class="panel panel-warning">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Rooms Created</h3>
+	  </div>
+	  <div class="panel-body">
+	  	<ul id="room-list">
+		    <% @rooms_created.each do |room| %>
+		    	<li><%= room.name %><br>
+		    <% end %>
+	  	</ul>
+	  </div>
+
+	</div>
+
 	<hr>
 
   <div class="center-content large-anchors">
